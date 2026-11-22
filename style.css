@@ -390,3 +390,15 @@ h1 em,h2 em,h3 em{font-style:normal}
     max-width: 100%;
   }
 }
+
+/* EMAIL BUTTON STYLE */
+.visit-actions .email-button {
+  background: #ffffff;
+  color: #101b35;
+  border: 1px solid #c9a45c;
+}
+
+.visit-actions .email-button:hover {
+  background: #ffffff;
+  color: #101b35;
+}
