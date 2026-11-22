@@ -364,3 +364,29 @@ h1 em,h2 em,h3 em{font-style:normal}
   object-position: center center;
   filter: none;
 }
+
+/* CONTACT BUTTONS - EQUAL SIZE */
+
+.visit-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 500px;
+}
+
+.visit-actions .button {
+  width: 100%;
+  min-height: 58px;
+  justify-content: center;
+  text-align: center;
+  padding: 0 15px;
+  margin: 0;
+  gap: 10px;
+}
+
+@media(max-width: 760px) {
+  .visit-actions {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}
