@@ -118,3 +118,37 @@ h1 em,h2 em,h3 em{font-style:normal}
 .service-card{height:440px}.service-content h3{font-size:38px}.service-content p{font-size:16px}
 .gallery-grid{grid-template-rows:240px 190px 190px}.contact-detail{grid-template-columns:100px 1fr}.hero-side-note{display:none}}
 @media(max-width:480px){.hero h1{font-size:54px}.service-content h3{font-size:36px}.contact-detail a{font-size:24px}}
+/* WhatsApp and Email buttons */
+.whatsapp-button {
+  background: #25D366;
+  color: #071b12;
+}
+
+.whatsapp-button:hover {
+  background: #ffffff;
+}
+
+.email-button {
+  background: #ffffff;
+  color: var(--ink);
+  border: 2px solid var(--gold);
+}
+
+.email-button:hover {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+@media(max-width:760px) {
+  .visit-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .visit-actions .button,
+  .visit-actions .text-link {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
