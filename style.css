@@ -357,3 +357,10 @@ h1 em,h2 em,h3 em{font-style:normal}
     font-size: 20px;
   }
 }
+
+/* CLOTHING ALTERATIONS IMAGE FIX */
+
+.service-card[data-service="alterations"] img {
+  object-position: center center;
+  filter: none;
+}
