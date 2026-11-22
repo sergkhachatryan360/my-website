@@ -118,15 +118,24 @@ backTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smo
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      revealObserver.unobserve(entry.target);
-    }
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll(".reveal").forEach(element => {
+    revealObserver.observe(element);
   });
-}, { threshold: 0.12 });
-document.querySelectorAll(".reveal").forEach(element => revealObserver.observe(element));
+} else {
+  document.querySelectorAll(".reveal").forEach(element => {
+    element.classList.add("visible");
+  });
+}
 
 // If an online photo cannot load, keep the card polished with a navy-and-gold fallback.
 document.querySelectorAll(".service-card img, .gallery-image img").forEach(image => {
