@@ -286,72 +286,16 @@ h1 em,h2 em,h3 em{font-style:normal}
     padding: 27px 24px;
   }
 }
-/* ===== ABOUT SECTION LAYOUT FIX ===== */
+/* ===== ABOUT SECTION FINAL FIX ===== */
 
 .intro.section-pad {
-  padding: 112px 12.5% !important;
-  overflow: hidden;
-}
-
-.intro .section-kicker {
-  width: 100%;
-  margin-bottom: 35px;
+  padding: 112px 12.5%;
 }
 
 .intro-grid {
-  width: 100%;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: 0.9fr 1.1fr;
   gap: 8%;
-  align-items: start;
-}
-
-.intro-heading,
-.intro-text {
-  min-width: 0;
-  width: 100%;
-}
-
-.intro-heading h2 {
-  font-size: clamp(44px, 5vw, 72px);
-  line-height: 1.05;
-  overflow-wrap: break-word;
-}
-
-.intro-text {
-  padding-top: 5px;
-}
-
-.intro-text .lead {
-  font-size: 22px;
-  line-height: 1.5;
-}
-
-@media (max-width: 760px) {
-  .intro.section-pad {
-    padding: 75px 7% !important;
-  }
-
-  .intro-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .intro-heading h2 {
-    font-size: 46px;
-  }
-
-  .intro-text .lead {
-    font-size: 20px;
-  }
-}
-
-/* ABOUT SECTION - IMAGE LAYOUT */
-
-.intro-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
   align-items: center;
 }
 
@@ -362,14 +306,14 @@ h1 em,h2 em,h3 em{font-style:normal}
 }
 
 .intro-image img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  object-position: center;
 }
 
 .intro-content {
-  width: 100%;
   min-width: 0;
 }
 
@@ -378,17 +322,24 @@ h1 em,h2 em,h3 em{font-style:normal}
 }
 
 .intro-heading h2 {
-  font-size: inherit;
-  line-height: inherit;
-  text-transform: inherit;
-  letter-spacing: inherit;
+  font-size: clamp(44px, 5.4vw, 78px);
+  line-height: 1.02;
 }
 
-.intro-text p {
-  line-height: 1.8;
+.intro-text {
+  padding-top: 0;
+}
+
+.intro-text .lead {
+  font-size: 24px;
+  line-height: 1.5;
 }
 
 @media (max-width: 760px) {
+  .intro.section-pad {
+    padding: 75px 7%;
+  }
+
   .intro-grid {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -396,5 +347,13 @@ h1 em,h2 em,h3 em{font-style:normal}
 
   .intro-image {
     height: 320px;
+  }
+
+  .intro-heading h2 {
+    font-size: 46px;
+  }
+
+  .intro-text .lead {
+    font-size: 20px;
   }
 }
