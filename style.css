@@ -152,3 +152,74 @@ h1 em,h2 em,h3 em{font-style:normal}
     text-align: center;
   }
 }
+
+/* GOOGLE REVIEWS SECTION */
+
+.reviews-section {
+  background: var(--paper);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.review-card {
+  background: #fff;
+  padding: 30px;
+  border-top: 5px solid var(--gold);
+  box-shadow: 0 8px 25px rgba(11, 20, 38, 0.09);
+  display: flex;
+  flex-direction: column;
+}
+
+.review-stars {
+  color: #d4a84b;
+  font-size: 23px;
+  letter-spacing: 3px;
+  margin-bottom: 17px;
+}
+
+.review-card h3 {
+  font-size: 23px;
+  margin-bottom: 15px;
+  color: var(--ink);
+}
+
+.review-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--body);
+  margin-bottom: 20px;
+}
+
+.review-card small {
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid #e6e2d8;
+  color: #727a73;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.reviews-footer {
+  text-align: center;
+  margin-top: 45px;
+}
+
+@media(max-width:1050px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media(max-width:600px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-card {
+    padding: 25px;
+  }
+}
