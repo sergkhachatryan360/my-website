@@ -407,7 +407,22 @@ h1 em,h2 em,h3 em{font-style:normal}
 * {
   cursor: default;
 }
+/* Keep the normal arrow cursor over text */
+* {
+  cursor: default !important;
+}
 
+/* Keep the hand cursor on clickable elements */
+a,
+button,
+[role="button"],
+.service-card,
+.gallery-image,
+.back-top,
+.modal-close,
+.lightbox-close {
+  cursor: pointer !important;
+}
 a,
 button {
   cursor: pointer;
