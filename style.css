@@ -427,3 +427,11 @@ a,
 button {
   cursor: pointer;
 }
+/* Remove the blinking text caret */
+body {
+  caret-color: transparent !important;
+}
+
+* {
+  caret-color: transparent !important;
+}
