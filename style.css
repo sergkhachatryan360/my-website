@@ -642,3 +642,28 @@ body {
     bottom: 20px;
   }
 }
+/* CHILDREN IMAGE FIX */
+
+.service-card[data-service="children"] {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card[data-service="children"] img {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.service-card[data-service="children"] .service-overlay {
+  z-index: 1;
+}
+
+.service-card[data-service="children"] .service-content {
+  z-index: 2;
+}
