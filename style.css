@@ -672,3 +672,7 @@ body {
 .service-card[data-service="children"] .service-content h3,
 .service-card[data-service="children"] .service-content p {
 }
+.service-card[data-service="children"] .service-content {
+  bottom: 14px;
+  left: 38px;
+}
