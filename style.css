@@ -435,3 +435,81 @@ body {
 * {
   caret-color: transparent !important;
 }
+
+/* ===== FINAL RESPONSIVE GAP FIX ===== */
+
+/* Four gallery photos: one tall image + three stacked images, with no empty cell. */
+.gallery-grid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  grid-template-rows: repeat(3, minmax(170px, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+.gallery-tall {
+  grid-row: 1 / 4;
+  grid-column: 1;
+  min-height: 0;
+}
+.gallery-grid .gallery-image:not(.gallery-tall) {
+  grid-column: 2;
+  min-height: 0;
+}
+
+/* At three columns, let the tenth service card fill the final row.
+   At two columns and one column, the ten cards already fit evenly. */
+@media (min-width: 1051px) {
+  .services-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-flow: row;
+  }
+  .service-card:last-child:nth-child(3n + 1) {
+    grid-column: 1 / -1;
+    height: 300px;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1050px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .service-card {
+    height: 420px;
+  }
+}
+
+@media (max-width: 760px) {
+  .gallery-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: repeat(3, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  .gallery-tall {
+    grid-row: 1 / 4;
+    grid-column: 1;
+  }
+  .gallery-grid .gallery-image:not(.gallery-tall) {
+    grid-column: 2;
+  }
+  .service-card:last-child:nth-child(3n + 1) {
+    grid-column: auto;
+    height: 440px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    grid-auto-rows: 230px;
+    gap: 10px;
+  }
+  .gallery-tall,
+  .gallery-grid .gallery-image:not(.gallery-tall) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .service-card:last-child:nth-child(3n + 1) {
+    grid-column: auto;
+    height: 390px;
+  }
+}
