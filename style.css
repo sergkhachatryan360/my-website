@@ -667,27 +667,3 @@ body {
 .service-card[data-service="children"] .service-content {
   z-index: 2;
 }
-/* CHILDREN CARD - SINGLE IMAGE FIX */
-
-.service-card[data-service="children"] {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-}
-
-.service-card[data-service="children"] img {
-  display: block !important;
-  position: absolute;
-  inset: 0;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
-  object-position: center;
-  transform: none;
-}
-
-.service-card[data-service="children"]::before,
-.service-card[data-service="children"]::after {
-  content: none !important;
-  background-image: none !important;
-}
