@@ -546,3 +546,6 @@ body {
     height: 390px;
   }
 }
+.service-card[data-service="children"] img {
+  object-position: right center;
+}
