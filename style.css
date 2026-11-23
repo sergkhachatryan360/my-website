@@ -667,3 +667,9 @@ body {
 .service-card[data-service="children"] .service-content {
   z-index: 2;
 }
+.service-card[data-service="children"] .service-overlay,
+.service-card[data-service="children"] .service-content span,
+.service-card[data-service="children"] .service-content h3,
+.service-card[data-service="children"] .service-content p {
+  display: none !important;
+}
