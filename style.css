@@ -546,53 +546,64 @@ body {
     height: 390px;
   }
 }
-.service-card[data-service="children"] img {
-  object-position: right center;
-}
-/* Children's clothing image */
-.service-card[data-service="children"] {
-  position: relative;
-  overflow: hidden;
-  min-height: 420px;
-}
+/* FINAL MOBILE RESPONSIVE FIX */
 
-.service-card[data-service="children"] img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 420px;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
+@media (max-width: 760px) {
   .services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .service-card {
+    height: 360px;
+    min-width: 0;
   }
 
   .service-card[data-service="children"] {
-    min-height: 380px;
+    height: 360px;
+    min-height: 0;
   }
 
   .service-card[data-service="children"] img {
-    min-height: 380px;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
     object-position: center;
-    background: #101b35;
   }
 
-  .service-card[data-service="children"] .service-content {
-    padding: 20px;
+  .service-content {
+    left: 12px;
+    right: 12px;
+    bottom: 15px;
+  }
+
+  .service-content h3 {
+    font-size: 27px;
+  }
+
+  .service-content p {
+    font-size: 13px;
   }
 }
 
 @media (max-width: 480px) {
-  .service-card[data-service="children"] {
-    min-height: 340px;
+  .services-grid {
+    grid-template-columns: 1fr;
   }
 
-  .service-card[data-service="children"] img {
-    min-height: 340px;
+  .service-card,
+  .service-card[data-service="children"] {
+    height: 390px;
+  }
+
+  .service-content {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .service-content h3 {
+    font-size: 36px;
   }
 }
